@@ -1,0 +1,10 @@
+#editor {
+    height: 545px;
+    max-height: 545px;
+    overflow-y: auto; 
+  }
+
+/*poner un color de fondo a la página*/
+body {
+    background-color: #dd1212;
+}

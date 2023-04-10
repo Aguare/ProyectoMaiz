@@ -1,0 +1,59 @@
+body {
+    background-color: #ffffff;
+}
+
+#foto {
+    background-image: url("../img/background-main.jpg");
+    filter: brightness(50%);
+    height: 650px;
+    position: static;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+#contenido {
+    margin-top: 800px;
+}
+
+h1 {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: rgb(10, 10, 10);
+    font-size: 4rem;
+    vertical-align: middle;
+
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    color: #ffffff;
+    text-shadow: -1px 0 #06832b, 
+    0 1px #06832b, 
+    1px 0 #06832b, 
+    0 -1px #06832b, 
+    -2px 2px 0 #06832b, 
+    2px 2px 0 #06832b, 
+    1px 1px #06832b, 
+    2px 2px #06832b, 
+    3px 3px #06832b, 
+    4px 4px #06832b, 
+    5px 5px #06832b,
+    6px 6px #06832b,
+    7px 7px #06832b,
+    8px 8px #06832b,
+    9px 9px #06832b;
+}
+
+#img-curiosity {
+    width: 750px;
+    height: 300px;
+    object-fit: cover;
+}
+
+p {
+    text-align: justify;
+}
