@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-    <title>TS1</title>
+    <title>PMaíz</title>
     <!-- Incluye el archivo CSS de Bootstrap -->
     <link rel="stylesheet" href="../vendor/bootstrap-5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/principal.css">
@@ -19,10 +18,10 @@
     <?php
     include '../resources/views/main-nav.php';
     ?>
-    <h1>Recetas y Curiosidades del Maíz</h1>
+    <h1>Gastronomía y Cultura del Maíz</h1>
     <div id="foto" class="col-md-12 div-foto">
     </div>
-    <div id="contenido" class="container mt-5">
+    <div id="contenido" class="container-fluid mt-5">
         <div class="row">
             <div class="col-sm-4">
                 <h2>About Me</h2>
@@ -57,7 +56,7 @@
                     muchos usos, ya que está presente en gran variedad de alimentos y preparaciones, como alimento
                     animal y en varias aplicaciones industriales, textiles, aceites y biocombustibles.</p>
 
-                    <h2>ALIMENTO ANCESTRAL</h2>
+                <h2>ALIMENTO ANCESTRAL</h2>
                 <h5>El cereal más producido del Mundo, 12 Abril, 2022</h5>
                 <img class="img-curiosity" id="img-curiosity" src="img/main-1.jpg" alt="maiz">
                 <p class="text-justify">El maíz es el cereal que más se cultiva en el mundo. Su nombre, que significa
@@ -65,7 +64,7 @@
                     vida”, demuestra su gran importancia no solo en la alimentación mundial, sino como producto base con
                     muchos usos, ya que está presente en gran variedad de alimentos y preparaciones, como alimento
                     animal y en varias aplicaciones industriales, textiles, aceites y biocombustibles.</p>
-                    <h2>ALIMENTO ANCESTRAL</h2>
+                <h2>ALIMENTO ANCESTRAL</h2>
                 <h5>El cereal más producido del Mundo, 12 Abril, 2022</h5>
                 <img class="img-curiosity" id="img-curiosity" src="img/main-1.jpg" alt="maiz">
                 <p class="text-justify">El maíz es el cereal que más se cultiva en el mundo. Su nombre, que significa
@@ -73,7 +72,7 @@
                     vida”, demuestra su gran importancia no solo en la alimentación mundial, sino como producto base con
                     muchos usos, ya que está presente en gran variedad de alimentos y preparaciones, como alimento
                     animal y en varias aplicaciones industriales, textiles, aceites y biocombustibles.</p>
-                    <h2>ALIMENTO ANCESTRAL</h2>
+                <h2>ALIMENTO ANCESTRAL</h2>
                 <h5>El cereal más producido del Mundo, 12 Abril, 2022</h5>
                 <img class="img-curiosity" id="img-curiosity" src="img/main-1.jpg" alt="maiz">
                 <p class="text-justify">El maíz es el cereal que más se cultiva en el mundo. Su nombre, que significa
@@ -81,7 +80,7 @@
                     vida”, demuestra su gran importancia no solo en la alimentación mundial, sino como producto base con
                     muchos usos, ya que está presente en gran variedad de alimentos y preparaciones, como alimento
                     animal y en varias aplicaciones industriales, textiles, aceites y biocombustibles.</p>
-                
+
             </div>
         </div>
     </div>

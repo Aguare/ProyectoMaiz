@@ -21,7 +21,7 @@ require_once __DIR__ . '/../../../app/Models/Recipe.php';
 
 <body>
     <?php
-    include __DIR__ . '/../main-nav.php';
+    include __DIR__ . '/../Sesion/sesion-nav.php';
     ?>
     <div class="container w-50 my-5">
         <?php
@@ -56,9 +56,16 @@ require_once __DIR__ . '/../../../app/Models/Recipe.php';
                     $timeString = '';
                     if ($hours > 0) {
                         $timeString .= $hours . ' horas ';
+                        if ($hours == 1) {
+                            $timeString = $hours . ' hora ';
+                        }
                     }
                     if ($minutes > 0) {
-                        $timeString .= $minutes . ' minutos';
+                        $tmp = $minutes . ' minutos';
+                        if ($minutes == 1) {
+                            $tmp = $minutes . ' minuto';
+                        }
+                        $timeString .= $tmp;
                     }
                     echo $timeString;
                     ?>
