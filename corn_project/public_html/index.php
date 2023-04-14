@@ -66,12 +66,12 @@
                     <p>Ésta página web tiene como propósito dar a conocer cómo el maíz es tan importante para las
                         diferentes gastronomías del mundo. Por lo cual observaremos algunas recetas de diferentes
                         paises. Así como también un poco de cómo se usa este importante alimento en las culturas</p>
-                    <div class="sticky-xl-top">
+                    <div class="sticky-top">
                         <br><br><br>
                         <h3 class="mt-2">TEMAS</h3>
                         <ul class="nav nav-pills flex-column ">
                             <li class="nav-item">
-                                <a class="nav-link" href="#gastronomia-gt">1. Gastronomía Guatemalteca</a>
+                                <a class="nav-link" href="#gastro">1. Gastronomía Guatemalteca</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#platillos-gt">2. Platillos guatemaltecos</a>
@@ -84,9 +84,8 @@
                             </li>
                         </ul>
                     </div>
-
                 </div>
-                <div id="gastronomia-gt" class="col-sm-7">
+                <div id="gastro" class="col-sm-7">
                     <h2 class="text-center">GASTRONOMÍA GUATEMALTECA</h5>
                         <img class="img-curiosity" id="img-curiosity" src="img/AntiguaGuatemala.jpg">
                         <p class="text-justify">El maíz es un ingrediente fundamental en la gastronomía guatemalteca y
