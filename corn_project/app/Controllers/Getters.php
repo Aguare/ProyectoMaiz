@@ -10,7 +10,7 @@ $conn = connect();
 function getCategorys()
 {
     global $conn;
-    $sql = "SELECT * FROM Category;";
+    $sql = "SELECT * FROM category;";
     $result = $conn->query($sql);
     $categorys = array();
     if ($result->num_rows > 0) {
@@ -27,7 +27,7 @@ function getReceips($page)
 {
     global $conn;
     $part = $page * 4;
-    $sql = "SELECT * FROM Recipe LIMIT 4 OFFSET $part;";
+    $sql = "SELECT * FROM recipe LIMIT 4 OFFSET $part;";
     $result = $conn->query($sql);
     $receips = array();
     if ($result->num_rows > 0) {
@@ -45,7 +45,7 @@ function getReceips($page)
 function getRecipeId($id)
 {
     global $conn;
-    $sql = "SELECT * FROM Recipe WHERE id_recipe = $id;";
+    $sql = "SELECT * FROM recipe WHERE id_recipe = $id;";
     $result = $conn->query($sql);
     $receips = array();
     if ($result->num_rows > 0) {
@@ -73,7 +73,7 @@ function getCategoryId($id)
 function getAmounList()
 {
     global $conn;
-    $sql = "SELECT COUNT(id_recipe) as 'TOTAL' FROM Recipe;";
+    $sql = "SELECT COUNT(id_recipe) as 'TOTAL' FROM recipe;";
     $result = $conn->query($sql);
     $amount = 0;
     if ($result->num_rows > 0) {
@@ -90,7 +90,7 @@ function validateLogin($user)
 {
     global $conn;
     try {
-        $sql = "SELECT * FROM User WHERE username = '$user->username';";
+        $sql = "SELECT * FROM user WHERE username = '$user->username';";
         $result = $conn->query($sql);
         if ($result != null && $result->num_rows > 0) {
             if ($row = $result->fetch_assoc()) {
@@ -114,7 +114,7 @@ function validateLogin($user)
 function getCommentsRecipe($id_recipe)
 {
     global $conn;
-    $sql = "SELECT * FROM Comment WHERE C_id_recipe = $id_recipe;";
+    $sql = "SELECT * FROM comment WHERE C_id_recipe = $id_recipe;";
     $result = $conn->query($sql);
     $comments = array();
     if ($result->num_rows > 0) {

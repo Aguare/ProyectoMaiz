@@ -6,7 +6,7 @@ $comentario = $_POST['comentario'];
 $id_recipe = $_POST['id_recipe'];
 $user = $_POST['user'];
 
-$sql = "INSERT INTO Comment (comment, C_id_recipe, C_username, date) VALUES (?, ?, ?, NOW())";
+$sql = "INSERT INTO comment (comment, C_id_recipe, C_username, date) VALUES (?, ?, ?, NOW())";
 $stmt = mysqli_prepare($conn, $sql);
 if ($stmt == false) {
     die('Error en la preparación de la consulta: ' . mysqli_error($conn));

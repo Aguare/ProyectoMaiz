@@ -23,7 +23,7 @@ include '../../resources/views/main-nav.php';
         die();
     } else {
         $conn = connect();
-        $sql = "INSERT INTO User (username, password) VALUES (?,?);";
+        $sql = "INSERT INTO user (username, password) VALUES (?,?);";
 
         $stmt = mysqli_prepare($conn, $sql);
         if ($stmt == false) {

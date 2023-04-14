@@ -35,7 +35,7 @@ include '../../resources/views/main-nav.php';
     $time = $hours . ":" . $minutes . ":00";
     $id_user = $_SESSION['user'];
     $conn = connect();
-    $sql = "INSERT INTO Recipe 
+    $sql = "INSERT INTO recipe 
     (name_recipe, description, instruction, image, fk_id_category, difficulty, preparation_time, portions, fk_username) 
     VALUES (?,?,?,?,?,?,?,?,?);";
 
