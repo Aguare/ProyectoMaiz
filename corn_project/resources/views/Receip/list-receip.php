@@ -2,6 +2,18 @@
 require_once '../../../resources/config.php';
 require_once '../../../app/Controllers/Getters.php';
 ?>
+<?php
+// Iniciamos la sesión
+session_start();
+
+// Verificamos si el usuario ha iniciado sesión
+if (!isset($_SESSION["user"])) {
+    // Si el usuario no ha iniciado sesión, lo redirigimos a la página de inicio de sesión
+    header("Location: " . getMain());
+    exit();
+}
+// Si el usuario ha iniciado sesión, permitimos el acceso a la página restringida
+?>
 <!DOCTYPE html>
 <html>
 
@@ -38,6 +50,7 @@ require_once '../../../app/Controllers/Getters.php';
         <br>
     </div>
     <?php
+    $tabNum = intval($tab);
     if ($numTabs != null && $numTabs > 1) {
         ?>
         <nav aria-label="Page navigation example">
@@ -45,7 +58,7 @@ require_once '../../../app/Controllers/Getters.php';
                 <li class="page-item <?php if ($tab == 0) {
                     print("disabled");
                 } ?>">
-                    <a class="page-link" href="<?php echo ($tab - 1); ?>" tabindex="-1">Anterior</a>
+                    <a class="page-link" href="<?php echo ($tabNum - 1); ?>" tabindex="-1">Anterior</a>
                 </li>
                 <?php
                 for ($i = 0; $i <= $numTabs; $i++) {
@@ -59,7 +72,7 @@ require_once '../../../app/Controllers/Getters.php';
                 <li class="page-item <?php if ($tab >= ($numTabs - 1)) {
                     print("disabled");
                 } ?>">
-                    <a class="page-link" href="<?php echo ($tab + 1); ?>" aria-disabled="true">Siguiente</a>
+                    <a class="page-link" href="<?php echo ($tabNum + 1); ?>" aria-disabled="true">Siguiente</a>
                 </li>
             </ul>
         </nav>
@@ -78,7 +91,7 @@ require_once '../../../app/Controllers/Getters.php';
                     echo "<div class=\"card-body\">";
                     echo "<h5 class=\"card-title\">" . $recipe->name_recipe . "</h5>";
                     echo "<p class=\"card-text\">" . $recipe->description . "</p>";
-                    echo "<a class=\"stretched-link\" href=\"view-receip/" . $recipe->id_recipe . "\"></a>";
+                    echo "<a class=\"stretched-link\" href=\"" . getRoot() . "resources/views/Receip/view-receip.php/" . $recipe->id_recipe . "\"></a>";
                     echo "</div>";
                     echo "</div>";
                     echo "</div>";

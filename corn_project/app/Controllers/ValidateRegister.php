@@ -1,10 +1,10 @@
 <?php
-include __DIR__ . '/../../resources/views/main-nav.php';
+require_once '../../resources/config.php';
+include '../../resources/views/Sesion/sesion-nav.php';
 ?>
 <div class="container w-50 my-5">
     <?php
-    require_once __DIR__ . '/../../resources/config.php';
-
+    session_start();
     $name = $_POST['name'];
     $description = $_POST['description'];
     $instruction = $_POST['instruction'];
@@ -33,7 +33,7 @@ include __DIR__ . '/../../resources/views/main-nav.php';
         $minutes = "0" . $minutes;
     }
     $time = $hours . ":" . $minutes . ":00";
-    $id_user = "pato";
+    $id_user = $_SESSION['user'];
     $conn = connect();
     $sql = "INSERT INTO Recipe 
     (name_recipe, description, instruction, image, fk_id_category, difficulty, preparation_time, portions, fk_username) 
@@ -46,9 +46,10 @@ include __DIR__ . '/../../resources/views/main-nav.php';
     mysqli_stmt_bind_param($stmt, "ssssiisis", $name, $description, $instruction, $imageData, $category, $difficulty, $time, $quantity, $id_user);
 
     if (mysqli_stmt_execute($stmt)) {
-        echo "Se registro la receta.";
+        echo "<br><br>";
         print("<div class=\"alert alert-success\" role=\"alert\">Se registró la receta correctamente</div>");
     } else {
+        echo "<br>";
         print("<div class=\"alert alert-danger\" role=\"alert\">Error al registrar la receta</div>");
         print(mysqli_error($conn));
     }

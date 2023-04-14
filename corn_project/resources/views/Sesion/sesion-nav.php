@@ -1,10 +1,7 @@
-<?php
-require_once '../../resources/config.php';
-?>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="<?php echo getRoot(); ?>corn_project/public_html/index.php">
-            <img src="<?php echo getRoot(); ?>public_html/img/home.png" alt="Logo" style="width:35px;">
+        <a class="navbar-brand" href="http://localhost/corn_project/resources/views/Receip/list-receip.php/0">
+            <img src="http://localhost/corn_project/public_html/img/home.png" alt="Logo" style="width:35px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,25 +11,19 @@ require_once '../../resources/config.php';
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page"
-                        href="<?php echo getRoot(); ?>corn_project/public_html/index.php">Inicio</a>
+                        href="http://localhost/corn_project/resources/views/Receip/list-receip.php/0">Inicio</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Recetas
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item"
-                                href="<?php echo getRoot(); ?>resources/views/Receip/list-receip.php/0">Ver</a>
-                        </li>
-                        <li><a class="dropdown-item"
-                                href="<?php echo getRoot(); ?>resources/views/Receip/register-receip.php">Publicar
-                                Receta
-                            </a>
-                        </li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        href="http://localhost/corn_project/resources/views/Receip/register-receip.php">Registrar
+                        Receta</a>
                 </li>
             </ul>
+            <form class="d-flex" action="/../corn_project/app/Controllers/Logout.php">
+                <button type="submit" class="btn btn-outline-danger">
+                    Cerrar Sesión
+                </button>
+            </form>
         </div>
     </div>
 </nav>

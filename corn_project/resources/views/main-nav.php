@@ -41,6 +41,7 @@
 
         </div>
         <div class="modal-footer">
+          <a href="" class="btn btn-link">Registrarse</a>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
           <button type="submit" class="btn btn-primary">Iniciar sesión</button>
         </div>

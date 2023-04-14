@@ -3,6 +3,7 @@ require_once __DIR__ . '/../../resources/config.php';
 require_once __DIR__ . '/../../app/Models/Recipe.php';
 require_once __DIR__ . '/../../app/Models/Category.php';
 require_once __DIR__ . '/../../app/Models/User.php';
+require_once __DIR__ . '/../../app/Models/Comment.php';
 
 $conn = connect();
 
@@ -100,7 +101,7 @@ function validateLogin($user)
                     return false;
                 }
             }
-        }else{
+        } else {
             return false;
         }
     } catch (Exception $th) {
@@ -109,4 +110,66 @@ function validateLogin($user)
     }
     return false;
 }
+
+function getCommentsRecipe($id_recipe)
+{
+    global $conn;
+    $sql = "SELECT * FROM Comment WHERE C_id_recipe = $id_recipe;";
+    $result = $conn->query($sql);
+    $comments = array();
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $comments[] = new Comment(
+                $row["id_comment"],
+                $row["C_username"],
+                $row["C_id_recipe"],
+                $row["comment"],
+                $row["date"]
+            );
+        }
+        return $comments;
+    } else {
+        return null;
+    }
+}
+
+function getTime($datetime, $full = false)
+{
+    $now = new DateTime();
+    $ago = new DateTime($datetime);
+    $diff = $now->diff($ago);
+
+    $diff->w = floor($diff->d / 7);
+    $diff->d -= $diff->w * 7;
+
+    $str = array(
+        'y' => 'año',
+        'm' => 'mes',
+        'w' => 'semana',
+        'd' => 'día',
+        'h' => 'hora',
+        'i' => 'minuto',
+        's' => 'segundo',
+    );
+    foreach ($str as $k => &$v) {
+        if ($diff->$k) {
+            $v = $diff->$k . ' ' . $v;
+            if ($diff->$k > 1) {
+                $v .= 's';
+            }
+        } else {
+            unset($str[$k]);
+        }
+    }
+
+    if (!$full)
+        $str = array_slice($str, 0, 1);
+    return $str ? 'Hace ' . implode(', ', $str) : 'justo ahora';
+}
+
+function getNewDate()
+{
+    return date("Y-m-d H:i:s");
+}
+
 ?>

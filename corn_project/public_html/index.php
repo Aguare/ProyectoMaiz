@@ -11,17 +11,53 @@
         </script>
     <script src="../vendor/bootstrap-5.3.0/js/bootstrap.min.js">
     </script>
-
 </head>
 
 <body>
     <?php
     include '../resources/views/main-nav.php';
     ?>
+    <?php
+    // Iniciamos la sesión
+    session_start();
+
+    // Verificamos si hay un mensaje de error almacenado en la variable de sesión
+    if (isset($_SESSION["error_message"])) {
+        // Si hay un mensaje de error, mostramos el modal
+        ?>
+        <div class="modal fade" id="modalError" tabindex="-1" aria-labelledby="modalErrorLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalErrorLabel">Error</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <?php echo $_SESSION["error_message"]; ?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("#modalError").modal("show");
+            });
+        </script>
+
+        <?php
+        // Borramos la variable de sesión para que no se muestre el modal nuevamente después de redirigir al usuario
+        session_unset();
+        session_destroy();
+    }
+    ?>
+
     <h1>Gastronomía y Cultura del Maíz</h1>
     <div id="foto" class="col-md-12 div-foto">
     </div>
-    <div id="contenido" class="container-fluid mt-5">
+    <div id="contenido" class="container mt-5 w-75">
         <div class="row">
             <div class="col-sm-4">
                 <h2>About Me</h2>

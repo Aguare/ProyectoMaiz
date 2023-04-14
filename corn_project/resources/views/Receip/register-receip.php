@@ -3,6 +3,18 @@ require_once '../../../resources/config.php';
 require_once '../../../app/Controllers/Getters.php';
 require_once '../../../app/Models/Category.php';
 ?>
+<?php
+// Iniciamos la sesión
+session_start();
+
+// Verificamos si el usuario ha iniciado sesión
+if (!isset($_SESSION["user"])) {
+    // Si el usuario no ha iniciado sesión, lo redirigimos a la página de inicio de sesión
+    header("Location: " . getMain());
+    exit();
+}
+// Si el usuario ha iniciado sesión, permitimos el acceso a la página restringida
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +37,7 @@ require_once '../../../app/Models/Category.php';
 
 <body>
     <?php
-    include '../../../resources/views/main-nav.php';
+    include '../../../resources/views/Sesion/sesion-nav.php';
     ?>
     <div class="my-4">
         <br>

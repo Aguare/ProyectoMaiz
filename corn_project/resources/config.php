@@ -5,6 +5,11 @@ function getRoot()
     return "http://localhost/corn_project/";
 }
 
+function getMain()
+{
+    return getRoot() . "public_html/index.php";
+}
+
 function getImage()
 {
     return getRoot() . "public_html/img/";
@@ -12,7 +17,7 @@ function getImage()
 
 function getInitSesion()
 {
-    return getRoot() . "resources/views/Sesion/home.php";
+    return getRoot() . "resources/views/Receip/list-receip.php/0";
 }
 
 function connect()
