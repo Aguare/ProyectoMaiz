@@ -3,6 +3,18 @@ require_once '../../../resources/config.php';
 require_once '../../../app/Controllers/Getters.php';
 require_once '../../../app/Models/Category.php';
 ?>
+<?php
+// Iniciamos la sesión
+session_start();
+
+// Verificamos si el usuario ha iniciado sesión
+if (!isset($_SESSION["user"])) {
+    // Si el usuario no ha iniciado sesión, lo redirigimos a la página de inicio de sesión
+    header("Location: " . getMain());
+    exit();
+}
+// Si el usuario ha iniciado sesión, permitimos el acceso a la página restringida
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,11 +24,10 @@ require_once '../../../app/Models/Category.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar receta</title>
     <link rel="stylesheet" href="<?php echo getRoot(); ?>vendor/bootstrap-5.3.0/css/bootstrap.min.css">
-    <!-- Incluye el archivo JS de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
         integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous">
         </script>
-    <script src="../../../vendor/bootstrap-5.3.0/js/bootstrap.min.js">
+    <script src="<?php echo getRoot(); ?>vendor/bootstrap-5.3.0/js/bootstrap.min.js">
     </script>
     <link rel="stylesheet" href="<?php echo getRoot(); ?>public_html/css/main.css">
     <!--EDITOR DE TEXTO-->
@@ -26,9 +37,12 @@ require_once '../../../app/Models/Category.php';
 
 <body>
     <?php
-    include '../../../resources/views/main-nav.php';
+    include '../../../resources/views/Sesion/sesion-nav.php';
     ?>
-    <div class="container w-50  my-5">
+    <div class="my-4">
+        <br>
+    </div>
+    <div class="container w-75  my-5">
         <form method="post" action="<?php echo getRoot(); ?>app/Controllers/ValidateRegister.php" class="was-validated"
             enctype="multipart/form-data">
             <div class="text-center">
@@ -98,9 +112,9 @@ require_once '../../../app/Models/Category.php';
                         <label for="exampleFormControlTextarea1" class="form-label">Ingrese los ingredientes y las
                             instrucciones</label>
                         <div #editor id="editor">
-                            <h1>INGREDIENTES</h1>
+                            <h2>INGREDIENTES</h2>
                             <br>
-                            <h1>INSTRUCCIONES</h1>
+                            <h2>INSTRUCCIONES</h2>
                         </div>
                     </div>
                 </div>
