@@ -1,6 +1,6 @@
 <?php
 require_once '../../resources/config.php';
-include '../../resources/views/Sesion/sesion-nav.php';
+include '../../resources/views/main-nav.php';
 ?>
 <div class="container w-50 my-5">
     <?php
