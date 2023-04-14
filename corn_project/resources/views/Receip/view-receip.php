@@ -157,7 +157,7 @@ $user = $_SESSION['user'];
                 <div class="form-group">
                     <input type="hidden" id="id_recipe" value="<?php echo $recipe[0]->id_recipe; ?>">
                     <input type="hidden" id="user_form" value="<?php echo $user; ?>">
-                    <textarea class="form-control" id="comentario" rows="2"
+                    <textarea class="form-control" id="comentario" rows="2" maxlength="250"
                         placeholder="Escribe aquí tu comentario"></textarea>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end my-2">

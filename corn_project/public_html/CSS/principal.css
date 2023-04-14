@@ -10,6 +10,7 @@ body {
     top: 0;
     right: 0;
     z-index: -1;
+    transition: transform 0.3s ease-in-out;
 }
 
 #contenido {
@@ -31,29 +32,52 @@ h1 {
     font-weight: bold;
     font-size: 60px;
     color: #ffffff;
-    text-shadow: -1px 0 #06832b, 
-    0 1px #06832b, 
-    1px 0 #06832b, 
-    0 -1px #06832b, 
-    -2px 2px 0 #06832b, 
-    2px 2px 0 #06832b, 
-    1px 1px #06832b, 
-    2px 2px #06832b, 
-    3px 3px #06832b, 
-    4px 4px #06832b, 
-    5px 5px #06832b,
-    6px 6px #06832b,
-    7px 7px #06832b,
-    8px 8px #06832b,
-    9px 9px #06832b;
+    text-shadow: -1px 0 #06832b,
+        0 1px #06832b,
+        1px 0 #06832b,
+        0 -1px #06832b,
+        -2px 2px 0 #06832b,
+        2px 2px 0 #06832b,
+        1px 1px #06832b,
+        2px 2px #06832b,
+        3px 3px #06832b,
+        4px 4px #06832b,
+        5px 5px #06832b,
+        6px 6px #06832b,
+        7px 7px #06832b,
+        8px 8px #06832b,
+        9px 9px #06832b;
 }
 
 #img-curiosity {
-    width: 750px;
-    height: 300px;
+    width: 100%;
+    height: auto;
     object-fit: cover;
+    transition: transform 0.3s ease-in-out;
 }
+
+.img-curiosity:hover {
+    transform: scale(1.01);
+}
+
 
 p {
     text-align: justify;
+}
+
+
+#gastronomía-gt {
+    scroll-margin-top: 200px;
+}
+
+#platillos-gt {
+    scroll-margin-top: 100px;
+}
+
+#expresion {
+    scroll-margin-top: 100px;
+}
+
+#platillos-gt {
+    scroll-margin-top: 100px;
 }
