@@ -22,7 +22,7 @@ function getInitSesion()
 
 function connect()
 {
-    $conn = new mysqli("localhost", "root", "74ef6a14", "corn_project");
+    $conn = new mysqli("localhost", "root", "ElCunoc_99!", "corn_project");
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
